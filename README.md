@@ -108,7 +108,7 @@ Folhas-Tarefa DD-MM-YYYY_TURNO/
 pip install reportlab openpyxl pandas
 ```
 
-### 🖼️ Exemplo de saída
+## 🖼️ Exemplo de saída
 
 #### Capa
 
@@ -117,4 +117,93 @@ pip install reportlab openpyxl pandas
 #### Lista de Atividades 
 
 ![lista_atividades](imagens/exemplo_lista_atividades.png)
+
+## 💻 Exemplos input/output
+
+### Considere essas atividades no Excel:
+
+| Name | Status | Cronograma - Start | Cronograma - End | Hora Início | Hora Fim | Encarregado Manhã | Encarregado Noite |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | 
+| Atividade 1 | Atraso | 05/10/2025 | 06/10/2025 | 20:00 | 01:00 | L | M |
+| Atividade 2 | Cronograma | 04/10/2025 | 04/10/2025 | 20:00 | 22:00 | L | M |
+| Atividade 3 | Cronograma | 13/11/2025 | 13/11/2025 | 01:00 | 14:00 | L | M | 
+| Atividade 4 | Em andamento | 12/11/2025 | 12/11/2025 |14:00 | 15:00 | L | M |
+| Atividade 5 | Cronograma | 12/11/2025 | 12/11/2025 |14:00 | 15:00 | L | M |
+| Atividade 6 | Parasalisado | 12/11/2025 | 13/11/2025 |21:00 | 01:00 | L | M |
+
+### Exemplo 1
+
+#### Entrada: 
+```
+12/11/2025 Noite
+```
+#### Saída: 
+
+> Em todas as atividades o Responável é o "Encarregado Noite"
+
+| Atividade | Entra na lista de atividades? | 
+| ---- | ---- | 
+| Atividade 1 | ✅ | 
+| Atividade 2 | ❌ | 
+| Atividade 3 | ✅ |  
+| Atividade 4 | ✅ | 
+| Atividade 5 | ❌ |
+| Atividade 6 | ✅ | 
+
+### Exemplo 2
+
+#### Entrada: 
+```
+12/11/2025 Manhã
+```
+#### Saída: 
+
+> Em todas as atividades o Responável é o "Encarregado Manhã"
+
+| Atividade | Entra na lista de atividades? | 
+| ---- | ---- | 
+| Atividade 1 | ✅ | 
+| Atividade 2 | ❌| 
+| Atividade 3 | ❌ |  
+| Atividade 4 | ✅ | 
+| Atividade 5 | ✅ |
+| Atividade 6 | ❌ | 
+
+### Exemplo 3
+
+#### Entrada: 
+```
+20/11/2025 Noite
+```
+#### Saída: 
+
+> Em todas as atividades o Responável é o "Encarregado Noite"
+
+| Atividade | Entra na lista de atividades? | 
+| ---- | ---- | 
+| Atividade 1 | ✅ | 
+| Atividade 2 | ❌ | 
+| Atividade 3 | ❌ |  
+| Atividade 4 | ✅ | 
+| Atividade 5 | ❌ |
+| Atividade 6 | ❌ | 
+
+### Exemplo 4
+
+#### Entrada: 
+```
+20/11/2025 Manhã
+```
+#### Saída: 
+
+> Em todas as atividades o Responável é o "Encarregado Manhã"
+
+| Atividade | Entra na lista de atividades? | 
+| ---- | ---- | 
+| Atividade 1 | ✅ | 
+| Atividade 2 | ❌| 
+| Atividade 3 | ❌ |  
+| Atividade 4 | ✅ | 
+| Atividade 5 | ✅ |
+| Atividade 6 | ❌ | 
 
