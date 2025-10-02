@@ -5,6 +5,18 @@ Este projeto tem como objetivo **automatizar a geração de Folhas-Tarefa (PDFs)
 A ferramenta processa os dados, identifica atividades por **turno** e **responsável**, e cria **arquivos PDF prontos para impressão**, organizados por encarregado.
 
 ---
+## 🧩 Dependências
+
+- reportlab
+
+- openpyxl
+
+- pandas
+
+### Instale-as com:
+```
+pip install reportlab openpyxl pandas
+```
 
 ## ⚙️ Como usar
 
@@ -94,19 +106,6 @@ Folhas-Tarefa DD-MM-YYYY_TURNO/
 - Capa com informações da equipe e data;
 
 - Lista das atividades atribuídas ao encarregado.
-
-## 🧩 Dependências
-
-- reportlab
-
-- openpyxl
-
-- pandas
-
-### Instale-as com:
-```
-pip install reportlab openpyxl pandas
-```
 
 ## 🖼️ Exemplo de saída
 
