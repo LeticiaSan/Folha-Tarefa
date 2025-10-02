@@ -204,6 +204,6 @@ pip install reportlab openpyxl pandas
 | Atividade 2 | ❌| 
 | Atividade 3 | ❌ |  
 | Atividade 4 | ✅ | 
-| Atividade 5 | ✅ |
+| Atividade 5 | ❌ |
 | Atividade 6 | ❌ | 
 
