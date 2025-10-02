@@ -1,0 +1,25 @@
+# ===============================
+# 🧱 GITIGNORE - Gerador Folhas-Tarefa
+# ===============================
+
+# 🔹 Ignorar caches e arquivos temporários do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🔹 Ignorar a planilha tratada gerada pelo script
+saida_tratada.xlsx
+
+# 🔹 Ignorar ambientes virtuais (caso use)
+venv/
+.env/
+.venv/
+
+# 🔹 Ignorar arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# 🔹 Ignorar saídas e PDFs gerados
+Folhas-Tarefa/
+*.pdf
