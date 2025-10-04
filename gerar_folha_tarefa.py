@@ -9,7 +9,7 @@ from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import cm
 
 if getattr(sys, 'frozen', False):
-    BASE_DIR = os.path.dirname(sys.executable)  # agora pega a pasta do .exe
+    BASE_DIR = os.path.dirname(sys.executable)
 else:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
