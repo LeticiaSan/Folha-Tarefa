@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 from datetime import datetime, time, timedelta
 from tkinter import Tk, filedialog, Toplevel, Label, Button, StringVar, OptionMenu
@@ -7,15 +8,22 @@ from reportlab.platypus import SimpleDocTemplate, Spacer, Image, PageBreak
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.units import cm
 
-# Importações de módulos internos
-from Funções.layout import build_tabela
-from Funções.gerar_capa import gerar_capa
-from Funções.processar_planilha_monday import processar_excel
- 
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)  # agora pega a pasta do .exe
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMG_DIR = os.path.join(BASE_DIR, "imagens")
-SAIDAS_DIR = os.path.join(BASE_DIR, "Folha Tarefa")
+SAIDAS_DIR = os.path.join(BASE_DIR, "folhatarefa")
+FUNCOES_DIR = os.path.join(BASE_DIR, "funcoes")
+
+if FUNCOES_DIR not in sys.path:
+    sys.path.append(FUNCOES_DIR)
+
+# Importações de módulos internos
+from funcoes.layout import build_tabela
+from funcoes.gerar_capa import gerar_capa
+from funcoes.processar_planilha_monday import processar_excel
 
 
 # ============================================================

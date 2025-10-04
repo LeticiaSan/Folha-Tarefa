@@ -6,7 +6,7 @@
 # e gera a tabela de colaboradores com seus respectivos campos.
 # ============================================================
 import os
-import sys
+import sys, io
 import locale
 import datetime
 from reportlab.lib import colors
@@ -15,7 +15,13 @@ from reportlab.platypus import Image, Table, TableStyle, Paragraph, Spacer, Imag
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 # Suporte a caracteres UTF-8 no terminal
-sys.stdout.reconfigure(encoding="utf-8")
+try:
+    if sys.stdout:
+        sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    # Sem console (modo Tkinter/--noconsole), apenas ignora
+    pass
+
 
 # Importa o dicionário de equipes externas
 from equipes import EQUIPES

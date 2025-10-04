@@ -7,10 +7,13 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.bat
+*.spec
 
 # 🔹 Ignorar a planilha tratada gerada pelo script
 saida_tratada.xlsx
-
+requirements.txt
+__init__.py
 # 🔹 Ignorar ambientes virtuais (caso use)
 venv/
 .env/
@@ -23,3 +26,6 @@ Thumbs.db
 # 🔹 Ignorar saídas e PDFs gerados
 Folhas-Tarefa/
 *.pdf
+
+dist*/
+build*/
